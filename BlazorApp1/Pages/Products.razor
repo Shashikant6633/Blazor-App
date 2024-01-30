@@ -1,0 +1,113 @@
+﻿@* @page "/products"
+@using RepositoryLayer.Models
+@using ViewModels
+@inject BlazorApp1.Service.IBlazorService service
+<PageTitle>Product List</PageTitle>
+
+<h1>Product List</h1>
+
+
+@if (products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Price</th>
+                <th>Name</th>
+                <th>Description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<ProductVM> products = new List<ProductVM>();
+    protected override async Task OnInitializedAsync()
+    {
+        products = (await service.GetAll()).ToList();
+    }
+
+    
+}
+ *@
+
+
+@page "/products"
+@using RepositoryLayer.Models
+@using ViewModels
+@inject BlazorApp1.Service.IBlazorService service
+@inject NavigationManager navigate
+<PageTitle>Product List</PageTitle>
+
+<h1>Product List</h1>
+
+@if (products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Price</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Action</th> <!-- New column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+                    <td>@product.Price</td>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="()=>NavigateToEdit(product.Id)">Edit</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteProduct(product.Id)">Delete</button>
+                    </td>
+            
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<ProductVM> products = new List<ProductVM>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = (await service.GetAll()).ToList();
+    }
+
+    private void NavigateToEdit(int id)
+    {
+        navigate.NavigateTo($"/edit/{id}");
+    }
+
+    private async Task DeleteProduct(int productId)
+    {
+        // Call your service method to delete the product
+        await service.DeleteProduct(productId);
+
+        // Refresh the product list after deletion
+        products = (await service.GetAll()).ToList();
+    }
+}
