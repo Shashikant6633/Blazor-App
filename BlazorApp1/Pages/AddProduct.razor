@@ -4,7 +4,7 @@
 @using ViewModels
 @inject BlazorApp1.Service.IBlazorService service
 @inject NavigationManager navigate
-
+@inject ISnackbar Snackbar
 
 
 <EditForm Model="@newProduct" OnValidSubmit="AddNewProduct">
@@ -35,23 +35,10 @@
     {
         int productId = await service.Add(newProduct);
         navigate.NavigateTo("/products");
+        Snackbar.Add("Product Created successfully.", Severity.Success);
     }
 }
 
-@* @code {
-    private ProductVM newProduct = new ProductVM();
-
-    private async Task AddNewProduct()
-    {
-        int productId = await service.Add(newProduct);
-
-        // Show toast notification on successful product addition
-        //await Task.Run(() => ToastService.ShowSuccess("Product added successfully"));
-
-        // Redirect to the product list page or any other page
-        navigate.NavigateTo("/products");
-    }
-} *@
 
 
 

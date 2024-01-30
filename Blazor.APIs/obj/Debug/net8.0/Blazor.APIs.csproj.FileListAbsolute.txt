@@ -324,3 +324,4 @@ C:\Users\sbhagwanshinde\Downloads\Blazor-master\Blazor.APIs\obj\Debug\net8.0\Bla
 C:\Users\sbhagwanshinde\Downloads\Blazor-master\Blazor.APIs\obj\Debug\net8.0\Blazor.APIs.genruntimeconfig.cache
 C:\Users\sbhagwanshinde\Downloads\Blazor-master\Blazor.APIs\obj\Debug\net8.0\ref\Blazor.APIs.dll
 C:\Users\sbhagwanshinde\Downloads\Blazor-master\Blazor.APIs\bin\Debug\net8.0\Blazored.Toast.dll
+C:\Users\sbhagwanshinde\Downloads\Blazor-master\Blazor.APIs\obj\Debug\net8.0\Blazor.APIs.sourcelink.json

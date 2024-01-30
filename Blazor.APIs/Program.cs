@@ -1,5 +1,6 @@
 using AutoMapper;
 using Blazor.APIs;
+using Blazored.Toast;
 using BusinessLayer;
 using Microsoft.EntityFrameworkCore;
 using RepositoryLayer;
