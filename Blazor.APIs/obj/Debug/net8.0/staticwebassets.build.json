@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "C+kJyaQ3wrhpyrnoa6YnxIZ7fZuEMIFj6rrOhnPVMH4=",
+  "Hash": "PpaW4Bz2x809usvu0NUAxaUTEuDfOBvdMGO0p5M+Bgw=",
   "Source": "Blazor.APIs",
   "BasePath": "_content/Blazor.APIs",
   "Mode": "Default",
@@ -66,10 +66,10 @@
       "OriginalItemSpec": "C:\\Users\\sbhagwanshinde\\.nuget\\packages\\mudblazor\\6.14.0\\staticwebassets\\MudBlazor.min.js"
     },
     {
-      "Identity": "C:\\Users\\sbhagwanshinde\\Downloads\\Blazor-master\\Blazor.APIs\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Blazor.APIs.styles.css",
+      "Identity": "D:\\Blazor-master\\Blazor.APIs\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Blazor.APIs.styles.css",
       "SourceId": "Blazor.APIs",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\sbhagwanshinde\\Downloads\\Blazor-master\\Blazor.APIs\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Blazor-master\\Blazor.APIs\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Blazor.APIs",
       "RelativePath": "Blazor.APIs.styles.css",
       "AssetKind": "All",
@@ -82,7 +82,7 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sbhagwanshinde\\Downloads\\Blazor-master\\Blazor.APIs\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Blazor.APIs.styles.css"
+      "OriginalItemSpec": "D:\\Blazor-master\\Blazor.APIs\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Blazor.APIs.styles.css"
     }
   ]
 }

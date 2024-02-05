@@ -1,0 +1,50 @@
+﻿@page "/orders"
+@using RepositoryLayer.Models
+@using ViewModels
+@inject BlazorApp1.Service.IBlazorService service
+@inject NavigationManager navigate
+@inject IDialogService dialogService
+<PageTitle>Order List</PageTitle>
+
+<h1>Order List</h1>
+
+@if (orders == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Order By</th>
+               @*  <th>Action</th> <!-- New column for actions --> *@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in orders)
+            {
+                <tr>
+                   @*  <td><a href="@($"fetchProduct/{order.Id}")">@order.ProductID</a></td> *@
+                    <td>@order.ProductId</td>
+                    <td>@order.OrderBy</td>
+                  @*   <td>
+                        <button class="btn btn-primary" @onclick="()=>NavigateToEdit(product.Id)">Edit</button>
+                        <MudButton Variant="Variant.Filled" Color="Color.Error" OnClick="@(() => DeleteProduct(product.Id))">Delete</MudButton>
+                    </td> *@
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<OrderVM> orders = new List<OrderVM>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        orders = (await service.GetAllOrders()).ToList();
+    }
+}

@@ -1,0 +1,44 @@
+﻿@page "/student"
+<h3>Add Student Details</h3>
+@using MudBlazor
+@using ViewModels
+@inject BlazorApp1.Service.IBlazorService service
+@inject NavigationManager navigate
+@inject ISnackbar Snackbar
+
+
+<EditForm Model="@newStudent" OnValidSubmit="AddNewStudent">
+    <DataAnnotationsValidator />
+    <MudGrid>
+        <MudItem xs="12" sm="7">
+            <MudCard>
+                <MudCardContent>
+                    <MudTextField Label="Student Name" HelperText="Student Name"
+                                  @bind-Value="newStudent.Name" For="@(()=>newStudent.Name)" InputType="InputType.Text" />
+                    <MudTextField HideSpinButtons="true" Label="Student Course" HelperText="Course"
+                                  @bind-Value="newStudent.Course" For="@(()=>newStudent.Course)" InputType="InputType.Text" />
+             
+
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Success" Class="ml-auto">Add Student</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</EditForm>
+
+@code {
+
+    private StudentVM newStudent = new StudentVM();
+    private async Task AddNewStudent()
+    {
+        int StudentId = await service.Add(newStudent);
+        navigate.NavigateTo("/students");
+        Snackbar.Add("Student Created successfully.", Severity.Success);
+    }
+}
+
+
+
+

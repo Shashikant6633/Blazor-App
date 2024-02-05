@@ -21,6 +21,52 @@ namespace RepositoryLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("RepositoryLayer.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("OrderBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Order");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            OrderBy = "Shashi",
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            OrderBy = "Tejas",
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            OrderBy = "Rohan",
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            OrderBy = "Vipul",
+                            ProductId = 2
+                        });
+                });
+
             modelBuilder.Entity("RepositoryLayer.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -58,6 +104,35 @@ namespace RepositoryLayer.Migrations
                             Description = "Description2",
                             Name = "Product2",
                             Price = 2000
+                        });
+                });
+
+            modelBuilder.Entity("RepositoryLayer.Models.Student", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Course")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Student");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Course = "Full-Stack",
+                            Name = "Shashi"
                         });
                 });
 #pragma warning restore 612, 618

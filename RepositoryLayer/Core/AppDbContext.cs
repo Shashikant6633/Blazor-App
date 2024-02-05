@@ -14,6 +14,10 @@ namespace RepositoryLayer.Core
             
         }
         public DbSet<Product> Product { get; set; }
+
+        public DbSet<Student> Student { get; set; }
+
+        public DbSet<Order> Order { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -32,6 +36,42 @@ namespace RepositoryLayer.Core
                 Price = 2000,
                 Description = "Description2"
             });
+
+            modelBuilder.Entity<Student>().HasData(new Student
+            {
+                Id = 1,
+                Name = "Shashi",
+                Course = "Full-Stack"
+            });
+
+            modelBuilder.Entity<Order>().HasData(new Order
+            {
+                Id = 1,
+                ProductId = 1,
+                OrderBy = "Shashi"
+            });
+
+            modelBuilder.Entity<Order>().HasData(new Order
+            {
+                Id = 2,
+                ProductId = 1,
+                OrderBy = "Tejas"
+            });
+
+            modelBuilder.Entity<Order>().HasData(new Order
+            {
+                Id = 3,
+                ProductId = 2,
+                OrderBy = "Rohan"
+            });
+
+            modelBuilder.Entity<Order>().HasData(new Order
+            {
+                Id = 4,
+                ProductId = 2,
+                OrderBy = "Vipul"
+            });
+
 
         }
     }

@@ -1,0 +1,50 @@
+﻿@page "/editStudent/{studentId:int}"
+@inject BlazorApp1.Service.IBlazorService service
+@inject NavigationManager navigate
+@using ViewModels
+@inject ISnackbar Snackbar
+
+
+<h3>Edit Student</h3>
+
+<EditForm Model="@editedStudent" OnValidSubmit="UpdateStudent">
+    <DataAnnotationsValidator />
+    <MudGrid>
+        <MudItem xs="12" sm="7">
+            <MudCard>
+                <MudCardContent>
+                    <MudTextField Label="Student Name" HelperText="Student Name"
+                                  @bind-Value="editedStudent.Name" For="@(()=>editedStudent.Name)" InputType="InputType.Text" />
+                    <MudTextField HideSpinButtons="true" Label="Student Course" HelperText="Course"
+                                  @bind-Value="editedStudent.Course" For="@(()=>editedStudent.Course)" InputType="InputType.Text" />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Update Student</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</EditForm>
+
+@code {
+    private StudentVM editedStudent = new StudentVM();
+
+    [Parameter]
+    public int studentId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Fetch the product by productId and assign it to editedProduct
+        editedStudent = await service.GetStudentById(studentId);
+    }
+
+    private async Task UpdateStudent()
+    {
+        // Call your service method to update the product
+        await service.UpdateStudent(editedStudent);
+
+        // Navigate back to the product list
+        navigate.NavigateTo("/students");
+        Snackbar.Add("Student Updated successfully.", Severity.Success);
+    }
+}

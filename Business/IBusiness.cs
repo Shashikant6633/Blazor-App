@@ -13,8 +13,24 @@ namespace BusinessLayer
         Task<int> AddProduct(ProductVM product);
         Task UpdateProduct(int productId, ProductVM updatedProduct);
 
-        Task<ProductVM> GetProductById(int productId);
+       // Task<ProductVM> GetProductById(int productId);
 
         Task DeleteProduct(int productId);
+
+        Task<List<StudentVM>> GetStudents();
+        Task<int> AddStudent(StudentVM student);
+
+        Task UpdateStudent(int studentId, StudentVM updatedStudent);
+
+        Task<StudentVM> GetStudentById(int studentId);
+
+        Task DeleteStudent(int studentId);
+
+        //Task<ProductVM> GetProductsById(int id);
+        Task<ProductVM> GetProductById(int productId);
+        Task<ProductVM> GetById(int id);
+        Task<List<OrderVM>> GetOrders();
+        Task<List<OrderVM>> GetOrdersByProductId(int productId);
+
     }
 }

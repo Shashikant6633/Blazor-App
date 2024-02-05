@@ -12,5 +12,18 @@ namespace BlazorApp1.Service
        Task UpdateProduct(ProductVM product);
 
         Task DeleteProduct(int productId);
+
+        Task<List<StudentVM>> GetAllStudents();
+
+        Task<int> Add(StudentVM student);
+
+        Task<StudentVM> GetStudentById(int studentId);
+        Task UpdateStudent(StudentVM student);
+
+        Task DeleteStudent(int studentId);
+
+        Task<ProductVM> GetById(int id);
+        Task<List<OrderVM>> GetAllOrders();
+        Task<List<OrderVM>> GetOrdersByProductId(int productId);
     }
 }

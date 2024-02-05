@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sbhagwanshinde\\Downloads\\Blazor-master\\ViewModels\\ViewModels.csproj",
+      "projectUniqueName": "D:\\Blazor-master\\ViewModels\\ViewModels.csproj",
       "projectName": "ViewModels",
-      "projectPath": "C:\\Users\\sbhagwanshinde\\Downloads\\Blazor-master\\ViewModels\\ViewModels.csproj",
+      "projectPath": "D:\\Blazor-master\\ViewModels\\ViewModels.csproj",
       "packagesPath": "C:\\Users\\sbhagwanshinde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sbhagwanshinde\\Downloads\\Blazor-master\\ViewModels\\obj\\",
+      "outputPath": "D:\\Blazor-master\\ViewModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

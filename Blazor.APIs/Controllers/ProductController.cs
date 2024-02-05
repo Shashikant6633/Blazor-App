@@ -55,9 +55,9 @@ namespace Blazor.APIs.Controllers
             return Ok(product);
         }
 
-[HttpDelete]
+        [HttpDelete]
 
-[Route("DeleteProduct/{productId}")]
+        [Route("DeleteProduct/{productId}")]
 
         public async Task<IActionResult> DeleteProduct(int productId)
 
@@ -67,6 +67,15 @@ namespace Blazor.APIs.Controllers
 
             return Ok();
 
+        }
+
+        [HttpGet]
+        [Route("{Id}")]
+       
+        public async Task<ActionResult<ProductVM>> GetById(int Id)
+        {
+            var product = await _business.GetById(Id);
+            return Ok(product);
         }
     }
 }

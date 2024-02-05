@@ -21,3 +21,15 @@ C:\Users\sbhagwanshinde\Downloads\Blazor-master\ViewModels\obj\Debug\net8.0\View
 C:\Users\sbhagwanshinde\Downloads\Blazor-master\ViewModels\obj\Debug\net8.0\refint\ViewModels.dll
 C:\Users\sbhagwanshinde\Downloads\Blazor-master\ViewModels\obj\Debug\net8.0\ViewModels.pdb
 C:\Users\sbhagwanshinde\Downloads\Blazor-master\ViewModels\obj\Debug\net8.0\ref\ViewModels.dll
+D:\Blazor-master\ViewModels\bin\Debug\net8.0\ViewModels.deps.json
+D:\Blazor-master\ViewModels\bin\Debug\net8.0\ViewModels.dll
+D:\Blazor-master\ViewModels\bin\Debug\net8.0\ViewModels.pdb
+D:\Blazor-master\ViewModels\obj\Debug\net8.0\ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\Blazor-master\ViewModels\obj\Debug\net8.0\ViewModels.AssemblyInfoInputs.cache
+D:\Blazor-master\ViewModels\obj\Debug\net8.0\ViewModels.AssemblyInfo.cs
+D:\Blazor-master\ViewModels\obj\Debug\net8.0\ViewModels.csproj.CoreCompileInputs.cache
+D:\Blazor-master\ViewModels\obj\Debug\net8.0\ViewModels.sourcelink.json
+D:\Blazor-master\ViewModels\obj\Debug\net8.0\ViewModels.dll
+D:\Blazor-master\ViewModels\obj\Debug\net8.0\refint\ViewModels.dll
+D:\Blazor-master\ViewModels\obj\Debug\net8.0\ViewModels.pdb
+D:\Blazor-master\ViewModels\obj\Debug\net8.0\ref\ViewModels.dll
