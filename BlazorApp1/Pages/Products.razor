@@ -71,6 +71,7 @@ else
                 <th>Price</th>
                 <th>Description</th>
                 <th>Action</th> <!-- New column for actions -->
+                <th>Add Order</th>
             </tr>
         </thead>
         <tbody>
@@ -84,6 +85,9 @@ else
                     <td>
                         <button class="btn btn-primary" @onclick="()=>NavigateToEdit(product.Id)">Edit</button>
                         <MudButton Variant="Variant.Filled" Color="Color.Error" OnClick="@(() => DeleteProduct(product.Id))">Delete</MudButton>
+                    </td>
+                    <td>
+                        <button class="btn btn-success" @onclick="()=>NavigateToAddOrder(product.Id)">Add Order</button>
                     </td>
             
                 </tr>
@@ -105,6 +109,11 @@ else
         navigate.NavigateTo($"/edit/{id}");
     }
 
+    private void NavigateToAddOrder(int productId)
+    {
+        navigate.NavigateTo($"/addorder/{productId}");
+    }
+
     private async Task DeleteProduct(int productId)
     {
         var result = await dialogService.ShowMessageBox(
@@ -122,5 +131,7 @@ else
             // Refresh the product list after deletion
             products = (await service.GetAll()).ToList();
         }
+
+       
     }
 }

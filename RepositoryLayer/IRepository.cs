@@ -25,5 +25,7 @@ namespace RepositoryLayer
 
         IQueryable<Order> GetOrders();
         Task<List<Order>> GetOrdersByProductId(int productId);
+        Task<Order> AddOrder(Order order);
+        Task DeleteOrder(int orderId);
     }
 }
